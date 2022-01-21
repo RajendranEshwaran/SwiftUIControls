@@ -11,7 +11,8 @@ struct ContentView: View {
     
     var body: some View {
         //visitingCardView()
-        visitingCardView2()
+        //visitingCardView2()
+        visitingCardView3()
     }
 }
 
@@ -21,6 +22,48 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+struct visitingCardView3:View{
+    @State private var screen = UIScreen.main.bounds.size
+    
+    var body: some View{
+        VStack(alignment:.leading){
+            VStack(alignment:.leading){
+                Text("MICHEL JOHN").font(Font.system(size: 30)).padding(.trailing,150)
+            Text("Solution Manager")
+            }
+            Spacer()
+            HStack{
+                Image(systemName: "house")
+                VStack{
+                    Text("(Home Phone) 123456677").fontWeight(.light)
+                }
+            }
+            HStack{
+                Image(systemName: "phone")
+                VStack{
+                    Text("(Mobile Phone) 123456677").fontWeight(.light)
+                }
+            }
+            HStack{
+                Image(systemName: "faxmachine")
+                VStack{
+                    Text("(Fax) 784748").fontWeight(.light)
+                }
+            }
+            HStack{
+                Image(systemName: "mail")
+                VStack{
+                    Text("YourEmail@gmail.com").fontWeight(.light)
+                }
+            }
+            Spacer()
+        }.frame(width: screen.width, height: screen.height/3)
+            .background(.green.opacity(0.2))
+        
+    }
+    
+}
 struct visitingCardView2:View{
     @State private var screen = UIScreen.main.bounds.size
     var body: some View
