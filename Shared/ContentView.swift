@@ -13,8 +13,8 @@ struct ContentView: View {
         //visitingCardView()
         //visitingCardView2()
         //visitingCardView3()
-        //buttonView()
-        txtView()
+        buttonView()
+        //txtView()
     }
 }
 
@@ -67,8 +67,26 @@ struct txtView:View{
 }
 struct buttonView:View{
     @State private var isTap:Bool = false
+    @State private var fruits = [
+        "Apple",
+        "Banana",
+        "Papaya",
+        "Mango"
+    ]
     var body: some View{
         VStack{
+            NavigationView{
+                List{
+                    ForEach(fruits,id:\.self){item in
+                        Text(item)
+                    }
+                    .onDelete(perform: self.delete(offset:))
+                    .onMove(perform: self.move(from:to:))
+                }
+                .navigationTitle("Fruits")
+                .toolbar{EditButton()}
+            }
+            
             Group{
                 Button(action: {printText()}){
                 HStack{
@@ -105,6 +123,7 @@ struct buttonView:View{
             Button("Action New4"){}.tint(.green).controlSize(.large).buttonStyle(.borderedProminent)
             
             }
+            
             if isTap
             {
                 Text("Simple Button Tapped")
@@ -114,6 +133,14 @@ struct buttonView:View{
     func printText()
     {
         print("Clicked")
+    }
+    func delete(offset:IndexSet)
+    {
+        fruits.remove(atOffsets: offset)
+    }
+    func move(from:IndexSet, to:Int)
+    {
+        fruits.move(fromOffsets: from, toOffset: to)
     }
 }
 struct visitingCardView3:View{
