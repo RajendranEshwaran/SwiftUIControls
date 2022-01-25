@@ -12,7 +12,8 @@ struct ContentView: View {
     var body: some View {
         //visitingCardView()
         //visitingCardView2()
-        visitingCardView3()
+        //visitingCardView3()
+        buttonView()
     }
 }
 
@@ -22,7 +23,57 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
+struct buttonView:View{
+    @State private var isTap:Bool = false
+    var body: some View{
+        VStack{
+            Group{
+                Button(action: {printText()}){
+                HStack{
+                    Image(systemName: "bookmark.square").resizable().aspectRatio( contentMode: .fit).frame(width: 20, height: 20)
+                    Text("BookMark")
+                }.padding(10).overlay(RoundedRectangle(cornerRadius: 5.0).stroke(lineWidth: 3))
+                }
+            
+            Button("Simple Button"){
+                isTap.toggle()
+            }
+            .buttonStyle(PlainButtonStyle())
+            .background(.red)
+            .clipShape(Capsule())
+            .foregroundColor(.white)
+            
+            Button("Plain Button Style"){}.buttonStyle(PlainButtonStyle())
+            
+            Button(action: {printText()}, label: {
+                Text("Clicked")
+                    .buttonStyle(.borderedProminent)
+            })
+            
+            Button(role: .destructive, action: {printText()}, label: {Text("Clicked 2")})
+            
+            Button("Styled Buttons"){}.buttonStyle(BorderlessButtonStyle())
+            
+            Button("Action New1"){}.tint(.green).buttonStyle(.bordered).controlSize(.large)
+            
+            Button("Action New2"){}.tint(.red).buttonStyle(.bordered)
+            
+            Button("Action New3"){}.tint(.black).buttonStyle(.bordered).buttonBorderShape(.capsule)
+            
+            Button("Action New4"){}.tint(.green).controlSize(.large).buttonStyle(.borderedProminent)
+            
+            }
+            if isTap
+            {
+                Text("Simple Button Tapped")
+            }
+        }
+    }
+    func printText()
+    {
+        print("Clicked")
+    }
+}
 struct visitingCardView3:View{
     @State private var screen = UIScreen.main.bounds.size
     
