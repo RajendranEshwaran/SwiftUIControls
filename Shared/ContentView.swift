@@ -13,7 +13,8 @@ struct ContentView: View {
         //visitingCardView()
         //visitingCardView2()
         //visitingCardView3()
-        buttonView()
+        //buttonView()
+        txtView()
     }
 }
 
@@ -23,6 +24,47 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct txtView:View{
+    @State private var text:String = ""
+    @State private var pwd:String = ""
+    @State private var username:String = ""
+    @State private var password:String = ""
+    @State private var namecomp = PersonNameComponents()
+    @State private var fullText: String = "This is some editable text..."
+
+    var body: some View{
+        VStack{
+            Group{
+                TextField("Enter Your Name", text: $text).padding().border(.red, width: 5.0)
+                TextField("Enter Your Name", text: $text).padding().textFieldStyle(.roundedBorder).border(.green, width: 2.0)
+                TextField("Enter Your Name",text: $text).padding().foregroundColor(.white).background(Capsule()).cornerRadius(5.0).shadow(color: Color.red, radius: 1, x: 0, y: 0)
+                TextField("Enter Your Name", text: $text).padding().background(LinearGradient(colors: [Color.red,Color.blue], startPoint: .topLeading, endPoint: .bottomTrailing)).foregroundColor(.white)
+                TextField("Enter Your Name", text: $text).padding().background(LinearGradient(gradient: Gradient(colors: [Color.yellow,Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing)).background(in: Capsule())
+                TextField("Enter Your Password",text: $pwd,onEditingChanged: { (chaging) in
+                    print("You on EditChanging",chaging)
+                })
+                TextField("Enter Your Password",text: $pwd,onCommit: { print("You, Pressed the return button")
+                })
+                    .keyboardType(.emailAddress)
+                    .disableAutocorrection(true)
+                    .textInputAutocapitalization(.words)
+                    .onSubmit {
+                        
+                    }
+                Form {
+                    TextField(text: $username, prompt: Text("Required")) {
+                        Text("Username")
+                    }
+                    SecureField(text: $password, prompt: Text("Required")) {
+                        Text("Password")
+                    }
+                }
+                
+                TextEditor(text: $fullText).background(.gray).foregroundColor(.black)
+            }
+        }
+    }
+}
 struct buttonView:View{
     @State private var isTap:Bool = false
     var body: some View{
