@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97AB98AA27A61218006796A7 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB98A927A61218006796A7 /* DesignView.swift */; };
+		97AB98AB27A61218006796A7 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB98A927A61218006796A7 /* DesignView.swift */; };
 		97F01AE8279B1216001CEFC7 /* SwiftUIControlsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01AD8279B1212001CEFC7 /* SwiftUIControlsApp.swift */; };
 		97F01AE9279B1216001CEFC7 /* SwiftUIControlsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01AD8279B1212001CEFC7 /* SwiftUIControlsApp.swift */; };
 		97F01AEA279B1216001CEFC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F01AD9279B1212001CEFC7 /* ContentView.swift */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97AB98A927A61218006796A7 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		97F01AD8279B1212001CEFC7 /* SwiftUIControlsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIControlsApp.swift; sourceTree = "<group>"; };
 		97F01AD9279B1212001CEFC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		97F01ADA279B1216001CEFC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			children = (
 				97F01AD8279B1212001CEFC7 /* SwiftUIControlsApp.swift */,
 				97F01AD9279B1212001CEFC7 /* ContentView.swift */,
+				97AB98A927A61218006796A7 /* DesignView.swift */,
 				97F01ADA279B1216001CEFC7 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -178,6 +182,7 @@
 			files = (
 				97F01AEA279B1216001CEFC7 /* ContentView.swift in Sources */,
 				97F01AE8279B1216001CEFC7 /* SwiftUIControlsApp.swift in Sources */,
+				97AB98AA27A61218006796A7 /* DesignView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +192,7 @@
 			files = (
 				97F01AEB279B1216001CEFC7 /* ContentView.swift in Sources */,
 				97F01AE9279B1216001CEFC7 /* SwiftUIControlsApp.swift in Sources */,
+				97AB98AB27A61218006796A7 /* DesignView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

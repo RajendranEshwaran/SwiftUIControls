@@ -13,8 +13,9 @@ struct ContentView: View {
         //visitingCardView()
         //visitingCardView2()
         //visitingCardView3()
-        buttonView()
+        //buttonView()
         //txtView()
+        imageViews()
     }
 }
 
@@ -24,6 +25,32 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+struct imageViews:View{
+    
+    var body: some View{
+        VStack{
+            HStack{
+                Image(systemName: "house")
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                AsyncImage(url: URL(string: "https://example.com/icon.png")){phase in
+                    if let image = phase.image {
+                        image.resizable()
+                    }
+                }
+                    .frame(width: 50, height: 100)
+                VStack{
+                Text("--------------------------")
+                Text("--------------------------")
+                Text("--------------------------")
+                Text("--------------------------")
+                }
+            }
+        }
+    }
+}
 struct txtView:View{
     @State private var text:String = ""
     @State private var pwd:String = ""
